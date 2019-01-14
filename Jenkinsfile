@@ -8,6 +8,9 @@ pipeline {
   }
   stages {
     stage('Build') {
+      environment {
+        npm_config_cache = 'npm-cache'
+      }
       steps {
         sh 'npm install'
       }
